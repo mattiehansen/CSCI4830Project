@@ -1,0 +1,19 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>School Pass App</title>
+    <link href="{% static 'schoolpass/my.css' %}" rel="stylesheet">
+</head>
+<body>
+<h1>Admin Screen</h1>
+<hr>
+<form>
+    Teacher ID: <input type="text" name="teacherID"><br>
+    Password: <input type="text" name="password"><br>
+    <input type=button onClick="parent.location='{% url 'pagethree' %}'" value='Accept'>
+    <input type=button onClick="parent.location='{% url 'index' %}'" value='Reject'>
+</form>
+</body>
+</html>
