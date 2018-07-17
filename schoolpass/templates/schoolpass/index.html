@@ -1,12 +1,5 @@
-{%  load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>School Pass App</title>
-    <link href="{% static 'schoolpass/my.css' %}" rel="stylesheet">
-</head>
-<body>
+{%  extends 'schoolpass/base.html' %}
+{% block content %}
 <h1>School Pass App</h1>
 <hr>
 <form>
@@ -14,5 +7,4 @@
     Location: <input type="text" name="location"><br>
     <input type=button onClick="parent.location='{% url 'pagetwo' %}'" value='Submit'>
 </form>
-</body>
-</html>
+{% endblock %}

@@ -1,12 +1,5 @@
-{%  load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>School Pass App</title>
-    <link href="{% static 'schoolpass/my.css' %}" rel="stylesheet">
-</head>
-<body>
+{%  extends 'schoolpass/base.html' %}
+{% block content %}
 <h1>Return Screen</h1>
 <hr>
     Student Name: FirstName LastName<br>
@@ -17,5 +10,4 @@
     Password: <input type="text" name="password"><br>
     <input type=button onClick="parent.location='{% url 'index' %}'" value='Returned'>
     </form>
-</body>
-</html>
+{% endblock %}

@@ -7,9 +7,11 @@ class Student(models.Model):
     id_student = models.AutoField(primary_key=True)
     student_first_name = models.CharField(max_length=15)
     student_last_name = models.CharField(max_length=15)
-    student_id = models.PositiveIntegerField(validators=[MinValueValidator(1000000000), MaxValueValidator(9999999999)])
-    accommodations = models.TextField()
-    notes = models.TextField()
+    student_id = models.PositiveIntegerField(
+        validators=[MinValueValidator(1000000000), MaxValueValidator(9999999999)],
+        unique=True,)
+    accommodations = models.TextField(default='None')
+    notes = models.TextField(default='No notes')
     number_of_passes = 0
 
     def __str__(self):
@@ -32,7 +34,9 @@ class Teacher(models.Model):
     id_teacher = models.AutoField(primary_key=True)
     teacher_first_name = models.CharField(max_length=15)
     teacher_last_name = models.CharField(max_length=15)
-    teacher_id = models.PositiveIntegerField(validators=[MinValueValidator(1000000000), MaxValueValidator(9999999999)])
+    teacher_id = models.PositiveIntegerField(
+        validators=[MinValueValidator(1000000000), MaxValueValidator(9999999999)],
+        unique=True,)
     departments = models.CharField(max_length=50)
     room_number = models.PositiveSmallIntegerField(validators=[MinValueValidator(0), MaxValueValidator(9999)])
     password = models.CharField(max_length=25)
