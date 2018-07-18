@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from datetime import datetime
-
+# test commit
 
 class Student(models.Model):
     id_student = models.AutoField(primary_key=True)
