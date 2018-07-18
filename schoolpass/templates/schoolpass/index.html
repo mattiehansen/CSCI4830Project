@@ -2,8 +2,10 @@
 {% block content %}
 <h1>School Pass App</h1>
 <hr>
+<p>Enter your student ID, password, and the destination of your pass.</p>
 <form>
-    Student ID: <input type="text" name="studentID" ><br>
+    Student ID: <input type="number" name="studentID" ><br>
+    Password: <input type="text" name="studentPassword"><br>
     Location: <input type="text" name="location"><br>
     <input type=button onClick="parent.location='{% url 'pagetwo' %}'" value='Submit'>
 </form>

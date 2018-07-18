@@ -7,7 +7,8 @@
     Timer: 00:00<br>
     Teacher: Teacher Name<br>
     <form>
+    Teacher ID: <input type="number" name="teacherID"><br>
     Password: <input type="text" name="password"><br>
-    <input type=button onClick="parent.location='{% url 'index' %}'" value='Returned'>
+    <input type=button onClick="parent.location='{% url 'returned' %}'" value='Returned'>
     </form>
 {% endblock %}

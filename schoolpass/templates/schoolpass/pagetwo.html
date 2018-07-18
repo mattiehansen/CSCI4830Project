@@ -3,9 +3,10 @@
 <h1>Admin Screen</h1>
 <hr>
 <form>
-    Teacher ID: <input type="text" name="teacherID"><br>
+    <p>Student pass info here</p>
+    Teacher ID: <input type="number" name="teacherID"><br>
     Password: <input type="text" name="password"><br>
     <input type=button onClick="parent.location='{% url 'pagethree' %}'" value='Accept'>
-    <input type=button onClick="parent.location='{% url 'index' %}'" value='Reject'>
+    <input type=button onClick="parent.location='{% url 'rejected' %}'" value='Reject'>
 </form>
 {% endblock %}

@@ -11,3 +11,10 @@ def pagetwo(request):
 
 def pagethree(request):
     return render(request, 'schoolpass/pagethree.html')
+
+
+def rejected(request):
+    return render(request, 'schoolpass/rejected.html')
+
+def returned(request):
+    return render(request, 'schoolpass/returned.html')
