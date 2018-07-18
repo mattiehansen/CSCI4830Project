@@ -1,7 +1,7 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from datetime import datetime
-# test commit
+
 
 class Student(models.Model):
     id_student = models.AutoField(primary_key=True)
@@ -34,6 +34,7 @@ class Student(models.Model):
     def get_rejections(self):
         return self.number_of_rejections
 
+
 class Teacher(models.Model):
     id_teacher = models.AutoField(primary_key=True)
     teacher_first_name = models.CharField(max_length=15)
@@ -54,8 +55,8 @@ class Teacher(models.Model):
     def get_room_number(self):
         return self.room_number
 
-
-class Pass(Student, Teacher):
+class Pass(models.Model):
+    id_pass = models.AutoField(primary_key=True)
     WATERFOUNTAIN = 'WF'
     RESTROOM = 'RR'
     NURSE = 'N'
