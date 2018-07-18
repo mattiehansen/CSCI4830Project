@@ -1,12 +1,11 @@
 {%  extends 'schoolpass/base.html' %}
 {% block content %}
-<h1>School Pass App</h1>
+<h1>Log-in Screen</h1>
 <hr>
-<p>Enter your student ID, password, and the destination of your pass.</p>
+<p>Enter your student ID and password.</p>
 <form>
     Student ID: <input type="number" name="studentID" ><br>
-    Password: <input type="text" name="studentPassword"><br>
-    Location: <input type="text" name="location"><br>
+    Password: <input type="password" name="studentPassword"><br>
     <input type=button onClick="parent.location='{% url 'pagetwo' %}'" value='Submit'>
 </form>
 {% endblock %}

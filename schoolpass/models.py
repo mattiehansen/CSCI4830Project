@@ -10,9 +10,11 @@ class Student(models.Model):
     student_id = models.PositiveIntegerField(
         validators=[MinValueValidator(1000000000), MaxValueValidator(9999999999)],
         unique=True,)
+    student_password = models.CharField(max_length=25)
     accommodations = models.TextField(default='None')
     notes = models.TextField(default='No notes')
-    number_of_passes = 0
+    number_of_passes = models.PositiveIntegerField(default=0)
+    number_of_rejections = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.student_first_name + " " + self.student_last_name
@@ -29,6 +31,8 @@ class Student(models.Model):
     def get_passes(self):
         return self.number_of_passes
 
+    def get_rejections(self):
+        return self.number_of_rejections
 
 class Teacher(models.Model):
     id_teacher = models.AutoField(primary_key=True)
@@ -39,7 +43,7 @@ class Teacher(models.Model):
         unique=True,)
     departments = models.CharField(max_length=50)
     room_number = models.PositiveSmallIntegerField(validators=[MinValueValidator(0), MaxValueValidator(9999)])
-    password = models.CharField(max_length=25)
+    teacher_password = models.CharField(max_length=25)
 
     def __str__(self):
         return self.teacher_first_name + " " + self.teacher_last_name

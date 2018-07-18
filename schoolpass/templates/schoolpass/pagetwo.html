@@ -1,11 +1,15 @@
 {%  extends 'schoolpass/base.html' %}
 {% block content %}
-<h1>Admin Screen</h1>
+<h1>School Pass Sign-up</h1>
 <hr>
 <form>
-    <p>Student pass info here</p>
+    <p>Student name: FirstName LastName</p>
+    <p>Accommodations: accomodations</p>
+    <p>Notes: notes</p>
+    <p>Select your pass kind and get teacher's credentials</p>
+    School pass kind: <input type="text" name="location"><br>
     Teacher ID: <input type="number" name="teacherID"><br>
-    Password: <input type="text" name="password"><br>
+    Password: <input type="password" name="password"><br>
     <input type=button onClick="parent.location='{% url 'pagethree' %}'" value='Accept'>
     <input type=button onClick="parent.location='{% url 'rejected' %}'" value='Reject'>
 </form>
