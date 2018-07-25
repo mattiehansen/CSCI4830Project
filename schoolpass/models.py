@@ -1,6 +1,33 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from datetime import datetime
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, AbstractUser
+#https://stackoverflow.com/questions/20779068/setting-up-two-different-types-of-users-in-django-1-5-1-6
+#https://wsvincent.com/django-custom-user-model-tutorial/
+#https://stackoverflow.com/questions/30495979/django-1-8-multiple-custom-user-types
+#https://wsvincent.com/django-custom-user-model-tutorial/
+#https://stackoverflow.com/questions/48011275/custom-user-model-fields-abstractuser-not-showing-in-django-admin
+#add email field
+'''
+class UserManager(BaseUserManager):
+    pass
+
+class MyUser(AbstractBaseUser):
+    personal_id = models.PositiveIntegerField(
+        validators=[MinValueValidator(1000000000), MaxValueValidator(9999999999)],
+        unique=True,)
+    first_name = models.CharField(max_length=15)
+    last_name = models.CharField(max_length=15)
+    email = models.EmailField(max_length=100)
+
+    active = models.BooleanField(default=True)
+    staff = models.BooleanField(default=False)
+    admin = models.BooleanField(default=False)
+
+    USERNAME_FIELD = 'personal_id'
+    REQUIRED_FIELDS = []
+
+'''
 
 
 class Student(models.Model):
