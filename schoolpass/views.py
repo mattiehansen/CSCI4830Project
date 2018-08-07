@@ -1,9 +1,11 @@
 from django.shortcuts import render
-from .models import CustomUser, Student
-from .forms import LoginForm, PassForm, ReturnForm, UserForm, StudentForm
+from django.contrib import messages
+from .models import CustomUser, Student, Teacher, Pass
+from .forms import LoginForm, PassForm, ReturnForm, UserForm, StudentForm, TeacherForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
 from django.views.decorators.http import require_POST
+
 
 def index(request):
     form = LoginForm
@@ -33,20 +35,33 @@ def returned(request):
 
 
 def student_registration(request):
-    if request.method == 'POST':
-        user_form = UserForm(request.POST, prefix='UF')
-        profile_form = StudentForm(request.POST, prefix='PF')
-
-        if user_form.is_valid() and profile_form.is_valid():
-            user = user_form.save(commit=False)
-            user.is_student = True
-            user.save()
-            user.student_profile.accommodations = profile_form.cleaned_data.get('accommodations')
-            user.student_profile.notes = profile_form.cleaned_data.get('notes')
-            user.student_profile.save()
-    else:
-        user_form = UserForm(request.POST, prefix='UF')
-        profile_form = StudentForm(request.POST, prefix='PF')
+    user_form = UserForm(request.POST or None, prefix='UF')
+    profile_form = StudentForm(request.POST or None, prefix='PF')
+    if user_form.is_valid() and profile_form.is_valid():
+        user = user_form.save(commit=False)
+        user.is_student = True
+        user.save()
+        user.student_profile.classes_enrolled = profile_form.cleaned_data.get('classes_enrolled')
+        user.student_profile.accommodations = profile_form.cleaned_data.get('accommodations')
+        user.student_profile.notes = profile_form.cleaned_data.get('notes')
+        user.student_profile.save()
+        messages.success(request, "Student was successfully created!")
 
     return render(request, 'schoolpass/studentregistration.html',
                   {'user_form': user_form, 'profile_form': profile_form,})
+
+
+def teacher_registration(request):
+    user_form = UserForm(request.POST or None, prefix='UF')
+    profile_form = TeacherForm(request.POST or None, prefix='PF')
+    if user_form.is_valid() and profile_form.is_valid():
+        user = user_form.save(commit=False)
+        user.is_teacher = True
+        user.save()
+        user.teacher_profile.classes_taught = profile_form.cleaned_data.get('classes_taught')
+        user.teacher_profile.room_number = profile_form.cleaned_data.get('room_number')
+        user.teacher_profile.save()
+        messages.success(request, "Teacher Successfully Created")
+
+    return render(request, 'schoolpass/teacherregistration.html',
+                  {'user_form': user_form, 'profile_form': profile_form, })

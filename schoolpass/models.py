@@ -8,7 +8,7 @@ from django.dispatch import receiver
 
 class CustomUser(AbstractUser):
     is_student = models.BooleanField(default=False)
-    classes = models.TextField(blank=True)
+    is_teacher = models.BooleanField(default=False)
 
     def __str__(self):
         return self.username
@@ -16,6 +16,7 @@ class CustomUser(AbstractUser):
 
 class Student(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True, related_name='student_profile')
+    classes_enrolled = models.TextField()
     accommodations = models.TextField(blank=True)
     notes = models.TextField(blank=True)
     number_of_passes = models.PositiveIntegerField(default=0)
@@ -28,10 +29,12 @@ class Student(models.Model):
         return self.user.last_login
 
     def classes(self):
-        return self.user.classes
+        return self.classes_enrolled
+
 
 class Teacher(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True, related_name='teacher_profile')
+    classes_taught = models.TextField()
     room_number = models.PositiveSmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(9999)])
 
     def __str__(self):
@@ -41,22 +44,26 @@ class Teacher(models.Model):
         return self.user.last_login
 
     def classes(self):
-        return self.user.classes
+        return self.classes_taught
+
 
 class Pass(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
-    location = models.CharField(max_length=30)
+    description = models.CharField(max_length=30)
     time_left = models.DateTimeField(default=datetime.now, blank=True)
-    time_returned = models.DateTimeField(blank=True)
+    time_returned = models.DateTimeField(blank=True, null=True)
+
 
 @receiver(post_save, sender=CustomUser)
 def create_user_profile(sender, instance, created, **kwargs):
     print('****', created)
     if instance.is_student is True:
         Student.objects.get_or_create(user=instance)
-    else:
+        print('Student created')
+    elif instance.is_teacher is True:
         Teacher.objects.get_or_create(user=instance)
+        print('Teacher created')
 
 
 @receiver(post_save, sender=CustomUser)
@@ -64,7 +71,10 @@ def save_user_profile(sender, instance, **kwargs):
     print('_-----')
     if instance.is_student is True:
         instance.student_profile.save()
-    else:
-        Teacher.objects.get_or_create(user=instance)
+        print('Student saved')
+    elif instance.is_teacher is True:
+        instance.teacher_profile.save()
+        print('Teacher saved')
+
 
 

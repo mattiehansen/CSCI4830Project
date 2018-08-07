@@ -9,22 +9,25 @@ class CustomUserAdmin(UserAdmin):
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
-    list_display = ['email', 'username', 'first_name', 'last_name', 'last_login', 'classes',
-                    'is_staff', 'is_superuser', 'is_active', 'is_student',]
+    list_display = ['email', 'username', 'first_name', 'last_name', 'last_login',
+                    'is_student', 'is_teacher', 'is_staff', 'is_superuser', 'is_active', ]
 
 
 class StudentAdmin(admin.ModelAdmin):
     model = Student
-    list_display = ['__str__', 'user', 'classes', 'last_logged_in',  'accommodations',
+    list_display = ['__str__', 'user', 'last_logged_in', 'classes', 'accommodations',
                     'notes', 'number_of_passes', 'number_of_rejections', ]
+
 
 class TeacherAdmin(admin.ModelAdmin):
     model = Teacher
-    list_display = ['__str__', 'user', 'classes', 'last_logged_in',  'room_number', ]
+    list_display = ['__str__', 'user', 'last_logged_in', 'classes', 'room_number', ]
+
 
 class PassAdmin(admin.ModelAdmin):
     model = Pass
-    list_display = ['student', 'teacher', 'location',  'time_left', 'time_returned']
+    list_display = ['student', 'teacher', 'description', 'id', 'time_left', 'time_returned']
+
 
 admin.site.register(CustomUser, CustomUserAdmin)
 admin.site.register(Student, StudentAdmin)

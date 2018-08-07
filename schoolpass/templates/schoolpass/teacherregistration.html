@@ -1,6 +1,6 @@
 {%  extends 'schoolpass/base.html' %}
 {% block content %}
-<h1>Student Registration</h1>
+<h1>Teacher Registration</h1>
 <hr>
     {% if messages %}
         {% for message in messages %}
@@ -11,6 +11,6 @@
   {% csrf_token %}
   {{ user_form.as_p }}
   {{ profile_form.as_p }}
-  <button type="submit">Create Student</button>
+  <button type="submit">Create Teacher</button>
 </form>
 {% endblock %}
