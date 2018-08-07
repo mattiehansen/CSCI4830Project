@@ -7,4 +7,5 @@ urlpatterns = [
     path('pagethree/', views.pagethree, name='pagethree'),
     path('rejected/', views.rejected, name='rejected'),
     path('returned/', views.returned, name='returned'),
+    path('student_registration/', views.student_registration, name='student_registration'),
 ]
