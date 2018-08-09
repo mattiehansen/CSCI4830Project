@@ -1,13 +1,17 @@
 {%  extends 'schoolpass/base.html' %}
 {% block content %}
 <h1>Pass Information</h1>
+    {% if user.is_authenticated %}
+<p style="font-size:16px;">Welcome, {{ user.first_name }}
+    {{ user.last_name }} (<strong>{{ user.username }}</strong>)</p>
+{% endif %}
 <hr>
     <p></p>
-    Student Name: FirstName LastName<br>
-    Teacher Name: FirstName LastName<br>
-    Kind of pass: PassKind<br>
-    Time left: 12:30<br>
-    <form action="" method="POST">
+    Student: {{ school_pass.student }}<br>
+    Teacher: {{ school_pass.teacher }}<br>
+    Pass info: {{ school_pass.description }}<br>
+    Created: {{ school_pass.time_left }}<br>
+    <form action="{% url 'pagethree' school_pass.id %}" method="POST">
     {% csrf_token %}
     Teacher ID: {{ form.teacher_username }}<br>
     Password: {{ form.teacher_password }}<br>

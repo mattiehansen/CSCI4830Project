@@ -6,9 +6,8 @@ from .decorators import student_required, teacher_required
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_POST
 from django.contrib.auth import logout
-from django.utils.decorators import method_decorator
+from datetime import datetime
 from django.contrib.auth.decorators import user_passes_test
-from django.http import HttpResponse
 
 
 def index(request):
@@ -45,17 +44,6 @@ def pagetwo(request):
     return render(request, 'schoolpass/pagetwo.html', {'form': form})
 
 
-def process_pass(request):
-    pass
-
-
-@login_required
-@student_required
-def pagethree(request):
-    form = ReturnForm
-    return render(request, 'schoolpass/pagethree.html', {'form': form})
-
-
 @login_required
 @student_required
 @require_POST
@@ -77,7 +65,8 @@ def process_pass(request):
                 user = CustomUser.objects.get(id=request.user.id)
                 user.pass_attempts += 1
                 user.save()
-                return redirect('pagethree')
+                return redirect('pagetwo')# Change to page three!!!!!
+                #return redirect('pagethree')
             else:  # if pass is rejected, log out student, redirect to index
                 user = CustomUser.objects.get(id=request.user.id)
                 user.pass_attempts += 1
@@ -87,6 +76,35 @@ def process_pass(request):
                 return redirect('index')
         else:  # if invalid username or password, redirect to same page
             return redirect('pagetwo')
+
+
+@login_required
+@student_required
+def pagethree(request, pk):
+    """
+    Page of a school pass. Where and when students do and complete their pass.
+    They would show this page to a teacher when returned.
+    :param request:
+    :param pk: id of the pass
+    :return: log out and redirect to home page if complete, redirect to itself otherwise
+    """
+    school_pass = Pass.objects.get(id=pk)
+    form = ReturnForm(request.POST or None)
+    if form.is_valid():
+        teacher_username = form.cleaned_data['teacher_username']
+        teacher_password = form.cleaned_data['teacher_password']
+        try:
+            teacher_user = CustomUser.objects.get(username=teacher_username)
+        except:
+            return redirect('pagethree', pk=pk)
+        if teacher_user.is_teacher and teacher_user.check_password(teacher_password) and teacher_user.is_staff:
+            school_pass.time_returned = datetime.now()
+            school_pass.save()
+            logout(request)
+            return redirect('index')
+        else: # if invalid username or password, redirect to same page
+            return redirect('pagethree', pk=pk)
+    return render(request, 'schoolpass/pagethree.html', {'form': form, 'school_pass': school_pass})
 
 
 @login_required
@@ -120,7 +138,7 @@ def registration_forms(request):
     The registration forms page where admins create student and teacher user accounts.
     Link to the admin site is also included where account fields can be edited.
     DO NOT USE ADMIN SITE'S USER, STUDENT, AND TEACHER CREATION PAGES TO CREATE ACCOUNTS!
-    USE FORMS ON THIS PAGE INSTEAD! OTHERWISE ACCOUNTS MAY NOT WORK PROPERLY!
+    USE FORMS ON THIS PAGE INSTEAD! OTHERWISE ACCOUNTS WOULD NOT WORK PROPERLY!
     FIELDS CAN BE EDITED ON ADMIN SITE ONCE ACCOUNTS CREATED ON THEIR RESPECTIVE FORMS!
     :param request:
     :return: render(request, 'schoolpass/registration_forms.html')
