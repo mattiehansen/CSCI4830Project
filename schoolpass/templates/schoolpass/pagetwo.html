@@ -1,16 +1,32 @@
 {%  extends 'schoolpass/base.html' %}
 {% block content %}
-<h1>School Pass Sign-up</h1>
+<h1>School Pass Sign-up</h1>{% if user.is_authenticated %}
+<p style="font-size:16px;">Welcome, {{ user.first_name }}
+    {{ user.last_name }} (<strong>{{ user.username }}</strong>) /
+    <a href="{% url 'logout' %}">Log out</a></p>
+{% endif %}
 <hr>
-<form>
-    <p>Student name: FirstName LastName</p>
-    <p>Accommodations: accomodations</p>
-    <p>Notes: notes</p>
-    <p>Select your pass kind and get teacher's credentials</p>
-    School pass kind: <input type="text" name="location"><br>
-    Teacher ID: <input type="number" name="teacherID"><br>
-    Password: <input type="password" name="password"><br>
+    <h2><u>Student Info</u></h2>
+    <p>Student name: {{ user.first_name }} {{ user.last_name }}</p>
+    <p>Classes: {{ request.user.student_profile.classes_enrolled }}</p>
+    {% if request.user.student_profile.accommodations %}
+    <p>Accommodations: {{ request.user.student_profile.accommodations }}</p>
+    {% endif %}
+    {% if request.user.student_profile.notes %}
+    <p>Notes: {{ request.user.student_profile.notes }}</p>
+    {% endif %}
+    <p># of pass attempts: {{ request.user.pass_attempts }}</p>
+    <p># of rejected passes: {{ request.user.pass_rejections }}</p>
+    <hr>
+    <p>Put in descripton of your pass and get teacher's credentials</p>
+    <form action="{% url 'process_pass' %}" method="POST">
+    {% csrf_token %}
+    Description: {{ form.description }}<br>
+    Teacher ID: {{ form.teacher_username }}<br>
+    Password: {{ form.teacher_password }}<br>
+    <input type="submit" name="Accept" value="Accept">
+    <input type="submit" name="Reject" value="Reject">
+    </form>
     <input type=button onClick="parent.location='{% url 'pagethree' %}'" value='Accept'>
     <input type=button onClick="parent.location='{% url 'rejected' %}'" value='Reject'>
-</form>
 {% endblock %}

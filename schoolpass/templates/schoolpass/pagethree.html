@@ -7,9 +7,10 @@
     Teacher Name: FirstName LastName<br>
     Kind of pass: PassKind<br>
     Time left: 12:30<br>
-    <form>
-    Teacher ID: <input type="number" name="teacherID"><br>
-    Password: <input type="password" name="password"><br>
-    <input type=button onClick="parent.location='{% url 'returned' %}'" value='Returned'>
+    <form action="" method="POST">
+    {% csrf_token %}
+    Teacher ID: {{ form.teacher_username }}<br>
+    Password: {{ form.teacher_password }}<br>
+    <input type="submit" value="Returned">
     </form>
 {% endblock %}

@@ -1,7 +1,12 @@
 {%  extends 'schoolpass/base.html' %}
 {% block content %}
 <h1>Student Registration</h1>
-<hr>
+{% if user.is_authenticated %}
+<p style="font-size:16px;">Welcome, {{ user.first_name }}
+    {{ user.last_name }} (<strong>{{ user.username }}</strong>) /
+    <a href="{% url 'logout' %}">Log out</a></p>
+{% endif %}
+ <hr>
     {% if messages %}
         {% for message in messages %}
             <div style="text-align: center; background-color: forestgreen; font-size: 28px">{{ message }}</div>
@@ -12,5 +17,6 @@
   {{ user_form.as_p }}
   {{ profile_form.as_p }}
   <button type="submit">Create Student</button>
+  <input type="button" onclick="location.href='{% url 'registration_forms' %}';" value="Go back" />
 </form>
 {% endblock %}

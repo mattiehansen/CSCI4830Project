@@ -16,7 +16,7 @@ class CustomUserAdmin(UserAdmin):
 class StudentAdmin(admin.ModelAdmin):
     model = Student
     list_display = ['__str__', 'user', 'last_logged_in', 'classes', 'accommodations',
-                    'notes', 'number_of_passes', 'number_of_rejections', ]
+                    'notes', 'passes_attempted', 'passes_rejected', ]
 
 
 class TeacherAdmin(admin.ModelAdmin):

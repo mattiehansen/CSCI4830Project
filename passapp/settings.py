@@ -121,4 +121,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
+# Custom Django auth. settings
+
 AUTH_USER_MODEL = 'schoolpass.CustomUser'
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

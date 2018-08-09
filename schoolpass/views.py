@@ -1,40 +1,144 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import CustomUser, Student, Teacher, Pass
-from .forms import LoginForm, PassForm, ReturnForm, UserForm, StudentForm, TeacherForm
+from .forms import PassForm, ReturnForm, UserForm, StudentForm, TeacherForm
+from .decorators import student_required, teacher_required
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import authenticate, login
 from django.views.decorators.http import require_POST
+from django.contrib.auth import logout
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import user_passes_test
+from django.http import HttpResponse
 
 
 def index(request):
-    form = LoginForm
+    """
+    Views for the index page.
+    For logged in users:
+        Admins are redirected to registrations forms (AKA admin panel) page.
+        Students are redirected to school pass app page.
+
+    :param request:
+    :return: index, pagetwo, or registration_forms pages
+    """
+    if request.user.is_authenticated:
+        if request.user.is_student:
+            return redirect('pagetwo')
+        elif request.user.is_superuser:
+            return redirect('registration_forms')
+        else:
+            return redirect('logout')
     return render(request, 'schoolpass/index.html')
 
 
-# @require_POST
+"""
+
+Pass app views/pages.
+
+"""
+
+
+@login_required
+@student_required
 def pagetwo(request):
     form = PassForm
-    return render(request, 'schoolpass/pagetwo.html')
+    return render(request, 'schoolpass/pagetwo.html', {'form': form})
 
 
-# @require_POST
+def process_pass(request):
+    pass
+
+
+@login_required
+@student_required
 def pagethree(request):
     form = ReturnForm
-    return render(request, 'schoolpass/pagethree.html')
+    return render(request, 'schoolpass/pagethree.html', {'form': form})
 
 
-# @require_POST
+@login_required
+@student_required
+@require_POST
+def process_pass(request):
+    form = PassForm(request.POST)
+    if form.is_valid():
+        description = form.cleaned_data['description']
+        teacher_username = form.cleaned_data['teacher_username']
+        teacher_password = form.cleaned_data['teacher_password']
+        try:
+            teacher_user = CustomUser.objects.get(username=teacher_username)
+        except:
+            return redirect('pagetwo')
+        if teacher_user.is_teacher and teacher_user.check_password(teacher_password) and teacher_user.is_staff:
+            if 'Accept' in request.POST:
+                '''
+                create and link to pass here, pass variables
+                '''
+                user = CustomUser.objects.get(id=request.user.id)
+                user.pass_attempts += 1
+                user.save()
+                return redirect('pagethree')
+            else:  # if pass is rejected, log out student, redirect to index
+                user = CustomUser.objects.get(id=request.user.id)
+                user.pass_attempts += 1
+                user.pass_rejections += 1
+                user.save()
+                logout(request)
+                return redirect('index')
+        else:  # if invalid username or password, redirect to same page
+            return redirect('pagetwo')
+
+
+@login_required
+@student_required
 def rejected(request):
     return render(request, 'schoolpass/rejected.html')
 
 
-# @require_POST
+@login_required
+@student_required
 def returned(request):
     return render(request, 'schoolpass/returned.html')
 
 
+"""
+End pass app views/pages.
+
+"""
+
+
+"""
+
+Superuser/admin only views/pages
+
+"""
+
+
+@user_passes_test(lambda u: u.is_superuser)
+def registration_forms(request):
+    """
+    The registration forms page where admins create student and teacher user accounts.
+    Link to the admin site is also included where account fields can be edited.
+    DO NOT USE ADMIN SITE'S USER, STUDENT, AND TEACHER CREATION PAGES TO CREATE ACCOUNTS!
+    USE FORMS ON THIS PAGE INSTEAD! OTHERWISE ACCOUNTS MAY NOT WORK PROPERLY!
+    FIELDS CAN BE EDITED ON ADMIN SITE ONCE ACCOUNTS CREATED ON THEIR RESPECTIVE FORMS!
+    :param request:
+    :return: render(request, 'schoolpass/registration_forms.html')
+    """
+    return render(request, 'schoolpass/registration_forms.html')
+
+
+@user_passes_test(lambda u: u.is_superuser)
 def student_registration(request):
+    """"
+    The student registration page where admins create student user accounts.
+    DO NOT USE ADMIN SITE'S USER AND STUDENT CREATION PAGES!
+    USE THIS FORM INSTEAD TO CREATE STUDENTS!
+    Credit to Nipun Brahmbhatt:
+    https://blog.botreetechnologies.com/supporting-multiple-roles-using-djangos-user-model-62afa9ce6f61
+    :param request:
+    :return: student registration page and forms.
+    """
     user_form = UserForm(request.POST or None, prefix='UF')
     profile_form = StudentForm(request.POST or None, prefix='PF')
     if user_form.is_valid() and profile_form.is_valid():
@@ -51,7 +155,17 @@ def student_registration(request):
                   {'user_form': user_form, 'profile_form': profile_form,})
 
 
+@user_passes_test(lambda u: u.is_superuser)
 def teacher_registration(request):
+    """"
+    The student registration page where admins create teacher user accounts.
+    DO NOT USE ADMIN SITE'S USER AND TEACHER CREATION PAGES!
+    USE THIS FORM INSTEAD TO CREATE TEACHERS!
+    Credit to Nipun Brahmbhatt:
+    https://blog.botreetechnologies.com/supporting-multiple-roles-using-djangos-user-model-62afa9ce6f61
+    :param request:
+    :return: teacher registration page and forms.
+    """
     user_form = UserForm(request.POST or None, prefix='UF')
     profile_form = TeacherForm(request.POST or None, prefix='PF')
     if user_form.is_valid() and profile_form.is_valid():
@@ -65,3 +179,10 @@ def teacher_registration(request):
 
     return render(request, 'schoolpass/teacherregistration.html',
                   {'user_form': user_form, 'profile_form': profile_form, })
+
+
+"""
+
+End superuser/admin only views/pages.
+
+"""

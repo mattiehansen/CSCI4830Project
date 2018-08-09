@@ -1,5 +1,4 @@
 from django import forms
-#from .models import Student, Teacher, Pass
 from .models import CustomUser, Student, Teacher
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
@@ -34,13 +33,12 @@ class TeacherForm(forms.ModelForm):
         fields = ('classes_taught', 'room_number',)
 
 
-class LoginForm(forms.Form):
-    pass
-
-
 class PassForm(forms.Form):
-    pass
+    description = forms.CharField(max_length=30)
+    teacher_username = forms.CharField(max_length=150)
+    teacher_password = forms.CharField(widget=forms.PasswordInput)
 
 
 class ReturnForm(forms.Form):
-    pass
+    teacher_username = forms.CharField(max_length=150)
+    teacher_password = forms.CharField(widget=forms.PasswordInput)

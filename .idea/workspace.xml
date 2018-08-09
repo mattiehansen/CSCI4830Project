@@ -3,16 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="bbde2290-767b-4380-9d78-b676766e5949" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/passapp/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/passapp/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/passapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/passapp/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolpass/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/schoolpass/admin.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolpass/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/schoolpass/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolpass/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolpass/migrations/0002_auto_20180807_0031.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolpass/migrations/0003_auto_20180807_0036.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolpass/migrations/0004_auto_20180807_0045.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/schoolpass/migrations/0005_pass.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolpass/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/schoolpass/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolpass/templates/schoolpass/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/schoolpass/templates/schoolpass/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolpass/templates/schoolpass/pagethree.html" beforeDir="false" afterPath="$PROJECT_DIR$/schoolpass/templates/schoolpass/pagethree.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolpass/templates/schoolpass/pagetwo.html" beforeDir="false" afterPath="$PROJECT_DIR$/schoolpass/templates/schoolpass/pagetwo.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolpass/templates/schoolpass/studentregistration.html" beforeDir="false" afterPath="$PROJECT_DIR$/schoolpass/templates/schoolpass/studentregistration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolpass/templates/schoolpass/teacherregistration.html" beforeDir="false" afterPath="$PROJECT_DIR$/schoolpass/templates/schoolpass/teacherregistration.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/schoolpass/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/schoolpass/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolpass/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/schoolpass/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/schoolpass/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/schoolpass/views.py" afterDir="false" />
     </list>
@@ -51,49 +53,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/schoolpass/forms.py">
+      <file leaf-file-name="pagetwo.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/pagetwo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#24#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="256">
+              <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/schoolpass/models.py">
+      <file leaf-file-name="pagethree.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/pagethree.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="153">
+              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/schoolpass/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="53" lean-forward="true" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+            <state relative-caret-position="255">
+              <caret line="85" column="31" lean-forward="true" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="31" />
               <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="admin.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/schoolpass/admin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#0#45#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,26 +86,35 @@
       <file leaf-file-name="studentregistration.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/studentregistration.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="72" lean-forward="true" selection-start-line="6" selection-start-column="72" selection-end-line="6" selection-end-column="72" />
+            <state relative-caret-position="136">
+              <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+              <folding>
+                <element signature="e#122#145#0#HTML" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teacherregistration.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/teacherregistration.html">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schoolpass/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="76" lean-forward="true" selection-start-line="6" selection-start-column="76" selection-end-line="6" selection-end-column="76" />
+            <state relative-caret-position="136">
+              <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/index.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/schoolpass/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" selection-end-column="14" />
+            <state relative-caret-position="119">
+              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -137,6 +130,11 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>{% csrf_token %}</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -145,23 +143,28 @@
       <list>
         <option value="$PROJECT_DIR$/hello/urls.py" />
         <option value="$PROJECT_DIR$/hello/views.py" />
-        <option value="$PROJECT_DIR$/passapp/urls.py" />
-        <option value="$PROJECT_DIR$/schoolpass/static/schoolpass/my.css" />
         <option value="$PROJECT_DIR$/schoolpass/templates/schoolpass/base.html" />
         <option value="$PROJECT_DIR$/schoolpass/templates/schoolpass/rejected.html" />
         <option value="$PROJECT_DIR$/schoolpass/templates/schoolpass/returned.html" />
-        <option value="$PROJECT_DIR$/schoolpass/templates/schoolpass/pagetwo.html" />
-        <option value="$PROJECT_DIR$/schoolpass/templates/schoolpass/pagethree.html" />
+        <option value="$PROJECT_DIR$/schoolpass/templates/schoolpass/login.html" />
+        <option value="$PROJECT_DIR$/passapp/urls.py" />
+        <option value="$PROJECT_DIR$/schoolpass/templates/registration/logout.html" />
+        <option value="$PROJECT_DIR$/schoolpass/static/schoolpass/my.css" />
         <option value="$PROJECT_DIR$/schoolpass/templates/schoolpass/index.html" />
-        <option value="$PROJECT_DIR$/schoolpass/tests.py" />
-        <option value="$PROJECT_DIR$/passapp/settings.py" />
-        <option value="$PROJECT_DIR$/schoolpass/urls.py" />
-        <option value="$PROJECT_DIR$/schoolpass/templates/schoolpass/teacherregistration.html" />
         <option value="$PROJECT_DIR$/schoolpass/templates/schoolpass/studentregistration.html" />
+        <option value="$PROJECT_DIR$/schoolpass/templates/schoolpass/teacherregistration.html" />
+        <option value="$PROJECT_DIR$/schoolpass/templates/registration/login.html" />
+        <option value="$PROJECT_DIR$/schoolpass/decorators.py" />
+        <option value="$PROJECT_DIR$/schoolpass/templates/schoolpass/registration_forms.html" />
+        <option value="$PROJECT_DIR$/passapp/settings.py" />
+        <option value="$PROJECT_DIR$/schoolpass/tests.py" />
         <option value="$PROJECT_DIR$/schoolpass/forms.py" />
-        <option value="$PROJECT_DIR$/schoolpass/views.py" />
+        <option value="$PROJECT_DIR$/schoolpass/templates/schoolpass/pagethree.html" />
+        <option value="$PROJECT_DIR$/schoolpass/urls.py" />
         <option value="$PROJECT_DIR$/schoolpass/admin.py" />
         <option value="$PROJECT_DIR$/schoolpass/models.py" />
+        <option value="$PROJECT_DIR$/schoolpass/templates/schoolpass/pagetwo.html" />
+        <option value="$PROJECT_DIR$/schoolpass/views.py" />
       </list>
     </option>
   </component>
@@ -172,10 +175,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="208" />
-    <option name="y" value="84" />
-    <option name="width" value="1384" />
-    <option name="height" value="969" />
+    <option name="x" value="132" />
+    <option name="y" value="45" />
+    <option name="width" value="1553" />
+    <option name="height" value="930" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -193,24 +196,20 @@
             <path>
               <item name="passapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="passapp" type="462c0819:PsiDirectoryNode" />
-              <item name="passapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="passapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="passapp" type="462c0819:PsiDirectoryNode" />
               <item name="schoolpass" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="passapp" type="b2602c69:ProjectViewProjectNode" />
-              <item name="passapp" type="462c0819:PsiDirectoryNode" />
-              <item name="schoolpass" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="passapp" type="b2602c69:ProjectViewProjectNode" />
               <item name="passapp" type="462c0819:PsiDirectoryNode" />
               <item name="schoolpass" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="passapp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="passapp" type="462c0819:PsiDirectoryNode" />
+              <item name="schoolpass" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="registration" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="passapp" type="b2602c69:ProjectViewProjectNode" />
@@ -295,16 +294,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="208" y="84" width="1384" height="969" extended-state="0" />
+    <frame x="132" y="45" width="1553" height="930" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3298969" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32884097" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32893" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32129964" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.27075812" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.34441087" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32828283" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.265625" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.31949097" />
       <window_info anchor="right" id="R Packages" order="3" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="R Graphics" order="3" />
@@ -322,11 +322,10 @@
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
     <layout-to-restore>
+      <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25771606" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -335,16 +334,17 @@
       <window_info anchor="right" id="R Graphics" order="3" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3445946" />
       <window_info anchor="right" id="R Packages" order="4" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32837838" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="SciView" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39948454" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -364,60 +364,11 @@
           <line>514</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/schoolpass/tests.py</url>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="4" />
+      <option name="time" value="7" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/pagethree.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolpass/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="55" column="31" lean-forward="true" selection-start-line="55" selection-start-column="31" selection-end-line="55" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolpass/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="1" selection-start-column="42" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolpass/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolpass/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="21" selection-start-line="2" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/pagetwo.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -581,13 +532,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hello/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" lean-forward="true" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hello/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -595,13 +539,6 @@
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolpass/static/schoolpass/my.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -619,38 +556,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/schoolpass/migrations/0002_auto_20180717_1622.py" />
-    <entry file="file://$PROJECT_DIR$/passapp/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/rejected.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="3" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/pagetwo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="40" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolpass/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="38" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/pagethree.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -661,6 +570,109 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolpass/templates/registration/logout.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="14" lean-forward="true" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/passapp/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#631#663#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/teacherregistration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolpass/static/schoolpass/my.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolpass/templates/registration/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <folding>
+            <element signature="e#124#159#0#HTML" expanded="true" />
+            <element signature="e#244#276#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolpass/decorators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolpass/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="29" column="29" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/passapp/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="123" lean-forward="true" selection-start-line="123" selection-end-line="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="21" lean-forward="true" selection-start-line="1" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hello/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolpass/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -668,80 +680,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/passapp/settings.py">
+    <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/registration_forms.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-208">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        <state relative-caret-position="119">
+          <caret line="7" column="11" lean-forward="true" selection-start-line="7" selection-start-column="11" selection-end-line="7" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolpass/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/studentregistration.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <element signature="e#122#145#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/schoolpass/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        <state relative-caret-position="119">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolpass/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/schoolpass/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="53" column="38" lean-forward="true" selection-start-line="53" selection-start-column="38" selection-end-line="53" selection-end-column="38" />
+        <state relative-caret-position="136">
+          <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="17" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/pagethree.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/pagetwo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="22" column="20" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/schoolpass/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="53" lean-forward="true" selection-start-line="6" selection-start-column="53" selection-end-line="6" selection-end-column="53" />
+        <state relative-caret-position="255">
+          <caret line="85" column="31" lean-forward="true" selection-start-line="85" selection-start-column="31" selection-end-line="85" selection-end-column="31" />
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/teacherregistration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="76" lean-forward="true" selection-start-line="6" selection-start-column="76" selection-end-line="6" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolpass/templates/schoolpass/studentregistration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="72" lean-forward="true" selection-start-line="6" selection-start-column="72" selection-end-line="6" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/schoolpass/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#0#45#0" expanded="true" />
           </folding>
         </state>
       </provider>

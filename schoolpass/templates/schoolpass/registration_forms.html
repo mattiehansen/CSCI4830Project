@@ -1,0 +1,15 @@
+{%  extends 'schoolpass/base.html' %}
+{% block content %}
+<h1>Admin Panel</h1>
+{% if user.is_authenticated %}
+<p style="font-size:16px;">Welcome, {{ user.first_name }}
+    {{ user.last_name }} (<strong>{{ user.username }}</strong>) /
+    <a href="{% url 'logout' %}">Log out</a></p>
+{% endif %}
+<hr>
+    <p>Click either of the forms to create a student or teacher.<br>
+        Students and teachers can be edited and viewed at the admin site.</p>
+    <p><a href="{% url 'student_registration' %}">Student Registration Form</a></p>
+    <p><a href="{% url 'teacher_registration' %}">Teacher Registration Form</a></p>
+    <p><a href="{% url 'admin:index' %}" target="_blank">Admin Page</a></p>
+{% endblock %}
