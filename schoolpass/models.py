@@ -33,8 +33,8 @@ class Student(models.Model):
         user: fields of CustomUser.
         classes_enrolled: Classes Student is enrolled in.
         accommodations: Student's accommodations.
-        number_of_passes: Number of times passes total attempted by Student, whether accepted or rejected.
-        number_of_rejections: Number of pass attempts that have been rejected by Teachers.
+        number_of_passes: Irrelevant field. Former pass attempt field.
+        number_of_rejections: Irrelevant field. Former pass rejections field.
     """
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True, related_name='student_profile')
     classes_enrolled = models.TextField()

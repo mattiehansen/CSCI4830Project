@@ -40,6 +40,13 @@ Pass app views/pages.
 @login_required
 @student_required
 def pagetwo(request):
+    """
+    Approve or reject screen. Where students can write a description of their destination
+    in which they can then show to a teacher. Teachers are then able to accept or decline it
+    by entering in their credentials.
+    :param request:
+    :return:
+    """
     form = PassForm
     return render(request, 'schoolpass/pagetwo.html', {'form': form})
 
@@ -48,6 +55,13 @@ def pagetwo(request):
 @student_required
 @require_POST
 def process_pass(request):
+    """
+    Process accept and reject request when teacher enters their credentials.
+    If accepted, create pass and redirect to page three with its id; increment student's pass attempt counter.
+    If rejected, log student out; increment both student's pass attempt and rejection counters.
+    :param request:
+    :return: pagetwo if invalid teacher username or password, pagethree if pass accepted
+    """
     form = PassForm(request.POST)
     if form.is_valid():
         description = form.cleaned_data['description']
@@ -58,16 +72,14 @@ def process_pass(request):
         except:
             return redirect('pagetwo')
         if teacher_user.is_teacher and teacher_user.check_password(teacher_password) and teacher_user.is_staff:
-            if 'Accept' in request.POST:
-                '''
-                create and link to pass here, pass variables
-                '''
+            if 'Accept' in request.POST: # if pass accepted
                 user = CustomUser.objects.get(id=request.user.id)
                 user.pass_attempts += 1
                 user.save()
-                return redirect('pagetwo')# Change to page three!!!!!
-                #return redirect('pagethree')
-            else:  # if pass is rejected, log out student, redirect to index
+                new_pass = Pass(student=request.user.student_profile, teacher=teacher_user.teacher_profile, description=description)
+                new_pass.save()
+                return redirect(pagethree, new_pass.id)
+            else:  # if pass is rejected
                 user = CustomUser.objects.get(id=request.user.id)
                 user.pass_attempts += 1
                 user.pass_rejections += 1
@@ -105,18 +117,6 @@ def pagethree(request, pk):
         else: # if invalid username or password, redirect to same page
             return redirect('pagethree', pk=pk)
     return render(request, 'schoolpass/pagethree.html', {'form': form, 'school_pass': school_pass})
-
-
-@login_required
-@student_required
-def rejected(request):
-    return render(request, 'schoolpass/rejected.html')
-
-
-@login_required
-@student_required
-def returned(request):
-    return render(request, 'schoolpass/returned.html')
 
 
 """
