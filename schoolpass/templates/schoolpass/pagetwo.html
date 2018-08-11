@@ -6,6 +6,11 @@
     <a href="{% url 'logout' %}">Log out</a></p>
 {% endif %}
 <hr>
+    {% if messages %}
+        {% for message in messages %}
+            <div style="background-color: firebrick; font-size: 28px">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
     <h2><u>Student Info</u></h2>
     <p>Student name: {{ user.first_name }} {{ user.last_name }}</p>
     <p>Classes: {{ request.user.student_profile.classes_enrolled }}</p>
@@ -18,7 +23,7 @@
     <p># of pass attempts: {{ request.user.pass_attempts }}</p>
     <p># of rejected passes: {{ request.user.pass_rejections }}</p>
     <hr>
-    <p>Put in descripton of your pass and get teacher's credentials</p>
+    <p>Put in description of your pass and get teacher's credentials</p>
     <form action="{% url 'process_pass' %}" method="POST">
     {% csrf_token %}
     Description: {{ form.description }}<br>

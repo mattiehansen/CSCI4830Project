@@ -3,11 +3,11 @@
 <h1>Log-in Screen</h1>
 <hr>
     {% if form.errors %}
-        <div style="background-color: firebrick">Invalid Username and/or password</div>
+        <div style="background-color: firebrick; font-size: 28px;">Invalid Username and/or password</div>
     {% endif %}
 
     {% if next %}
-        <div style="background-color: firebrick">Access to the page denied.</div>
+        <div style="background-color: firebrick; font-size: 28px;">Access to the page denied.</div>
     {% endif %}
     <form method="post" action="{% url 'login' %}">
         {% csrf_token %}

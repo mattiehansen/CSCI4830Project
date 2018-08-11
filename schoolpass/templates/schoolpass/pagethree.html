@@ -6,6 +6,11 @@
     {{ user.last_name }} (<strong>{{ user.username }}</strong>)</p>
 {% endif %}
 <hr>
+   {% if messages %}
+        {% for message in messages %}
+            <div style="background-color: firebrick; font-size: 28px">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
     <p></p>
     Student: {{ school_pass.student }}<br>
     Teacher: {{ school_pass.teacher }}<br>

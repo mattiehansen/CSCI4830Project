@@ -2,5 +2,10 @@
 {% block content %}
 <h1>Welcome to the School Pass app!</h1>
 <hr>
+    {% if messages %}
+        {% for message in messages %}
+            <div style="background-color: #2471A3; font-size: 28px">{{ message }}</div>
+        {% endfor %}
+    {% endif %}
 <p><a href="{% url 'login' %}">Click here to log into the app</a></p>
 {% endblock %}

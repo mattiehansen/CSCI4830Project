@@ -33,11 +33,12 @@ class Student(models.Model):
         user: fields of CustomUser.
         classes_enrolled: Classes Student is enrolled in.
         accommodations: Student's accommodations.
+        notes: Student's notes.
         number_of_passes: Irrelevant field. Former pass attempt field.
         number_of_rejections: Irrelevant field. Former pass rejections field.
     """
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True, related_name='student_profile')
-    classes_enrolled = models.TextField()
+    classes_enrolled = models.TextField(max_length=150)
     accommodations = models.TextField(blank=True)
     notes = models.TextField(blank=True)
     number_of_passes = models.PositiveIntegerField(default=0)
@@ -69,7 +70,7 @@ class Teacher(models.Model):
         room_number: Room number of teacher's home room.
     """
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE, primary_key=True, related_name='teacher_profile')
-    classes_taught = models.TextField()
+    classes_taught = models.TextField(max_length=150)
     room_number = models.PositiveSmallIntegerField(default=0, validators=[MinValueValidator(0), MaxValueValidator(9999)])
 
     def __str__(self):
@@ -95,7 +96,7 @@ class Pass(models.Model):
     """
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     teacher = models.ForeignKey(Teacher, on_delete=models.CASCADE)
-    description = models.CharField(max_length=30)
+    description = models.CharField(max_length=50)
     time_left = models.DateTimeField(default=datetime.now, blank=True)
     time_returned = models.DateTimeField(blank=True, null=True)
 
